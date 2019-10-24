@@ -19,7 +19,7 @@ export class AppComponent {
     },
     {
       title: 'Add',
-      url: '/list',
+      url: '/item',
       icon: 'add'
     }
   ];

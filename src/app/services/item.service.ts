@@ -38,7 +38,8 @@ export class ItemService {
   }
 
   deleteItem(item: Item) {
-
+    this.items.splice(this.items.indexOf(item), 1);
+    this.saveItems();
   }
 
 

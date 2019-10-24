@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-
+import { ItemService } from '../services/item.service';
+import { NavController } from '@ionic/angular';
+import { Item } from '../classes/item';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,6 +9,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(
+    public itemService: ItemService,
+    private navCtrl: NavController
+  ) { }
 
+  updateItem(id: String) {
+    this.navCtrl.navigateBack('item/' + id);
+  }
+
+  deleteItem(item: Item) {
+    this.itemService.deleteItem(item);
+  }
 }
